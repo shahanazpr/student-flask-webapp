@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Management</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f4f4f9;
+            padding: 20px;
+        }
+        h2 {
+            color: #333;
+        }
+        form {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            width: 300px;
+        }
+        input {
+            width: 95%;
+            padding: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px;
+            cursor: pointer;
+        }
+        ul {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Add Student</h2>
+    <form action="/add" method="post">
+        Name:<br>
+        <input type="text" name="name"><br><br>
+
+        Roll:<br>
+        <input type="text" name="roll"><br><br>
+
+        Course:<br>
+        <input type="text" name="course"><br><br>
+
+        <button type="submit">Add Student</button>
+    </form>
+
+    <h2>Student List</h2>
+    <ul>
+        {% for student in students %}
+            <li>{{ student.name }} - {{ student.roll }} - {{ student.course }}</li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
